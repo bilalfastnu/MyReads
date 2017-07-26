@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-
+import ShelfChanger from './ShelfChanger'
 
 class Book extends Component {
   static propTypes = {
@@ -16,22 +16,12 @@ class Book extends Component {
               <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
                 }}></div>
-                {/* TODO: separate compoent for changer */}
-                <div className="book-shelf-changer">
-                  <select>
-                    <option value="none" disabled>Move to...</option>
-                    <option value="currentlyReading">Currently Reading</option>
-                    <option value="wantToRead">Want to Read</option>
-                    <option value="read">Read</option>
-                    <option value="none">None</option>
-                  </select>
-                </div>
+                <ShelfChanger book={ book } />
               </div>
               <div className="book-title">{book.title}</div>
               {book.authors.map((author) => (
                 <div className="book-authors">{author}</div>
               ))}
-              
             </div>
           </li>
     )
