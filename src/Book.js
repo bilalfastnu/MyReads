@@ -8,12 +8,13 @@ class Book extends Component {
   }
 
   render() {
+    const { book } = this.props
 
     return (
-          <li>
+          <li key={book.id}>
             <div className="book">
               <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${this.props.book.imageLinks.thumbnail})`
+                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
                 }}></div>
                 {/* TODO: separate compoent for changer */}
                 <div className="book-shelf-changer">
@@ -26,9 +27,11 @@ class Book extends Component {
                   </select>
                 </div>
               </div>
-              <div className="book-title">{this.props.book.title}</div>
-              {/* TODO: Handle multiple authors */}
-              <div className="book-authors">{this.props.book.authors}</div>
+              <div className="book-title">{book.title}</div>
+              {book.authors.map((author) => (
+                <div className="book-authors">{author}</div>
+              ))}
+              
             </div>
           </li>
     )
