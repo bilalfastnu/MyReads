@@ -11,7 +11,7 @@ class Book extends Component {
     const { book } = this.props
 
     return (
-          <li key={book.id}>
+          <li>
             <div className="book">
               <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
@@ -19,8 +19,8 @@ class Book extends Component {
                 <ShelfChanger book={ book } />
               </div>
               <div className="book-title">{book.title}</div>
-              {book.authors.map((author) => (
-                <div className="book-authors">{author}</div>
+              {book.authors.map((author, index) => (
+                <div className="book-authors" key={index}>{author}</div>
               ))}
             </div>
           </li>
