@@ -7,18 +7,19 @@ class ShelfChanger extends Component {
     book: PropTypes.object.isRequired
   }
 
-  state =  {  value: 'Move to...'}
+  state =  { shelfChange: this.props.shelfChange }
 
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
-    console.log("change to", this.state.value)
+  changeShelf = (event) => {
+    this.props.book.shelf = event.target.value
+    this.props.notifyShelfChange();
   }
+
   render() {
     const { book } = this.props
 
     return (
       <div className="book-shelf-changer">
-        <select value={this.state.value} onChange={this.handleChange}>
+        <select  onChange={this.changeShelf}>
           <option value="none" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>

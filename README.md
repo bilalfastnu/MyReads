@@ -16,6 +16,9 @@ This game was built for the Udacity React Nanodegree Program. The purpose of the
 * [React Training/React Router](https://reacttraining.com/react-router/web/api/BrowserRouter)
 * [React API](https://facebook.github.io/react/docs/react-api.html)
 
+* [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/#children-to-parent)
+
+
 ### Udacity Resources:
 
 * [Project starter template](https://github.com/udacity/reactnd-project-myreads-starter)

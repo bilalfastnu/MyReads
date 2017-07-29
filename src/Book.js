@@ -7,16 +7,26 @@ class Book extends Component {
     book: PropTypes.object.isRequired
   }
 
+  state = { shelfChange: false }
+
+  onShelfChange() {
+    this.setState({ selfChange: true })
+  }
+
   render() {
     const { book } = this.props
 
     return (
           <li>
             <div className="book">
+              <div>Did you change ? {this.state.selfChange ? book.shelf : 'no'}</div>
               <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
                 }}></div>
-                <ShelfChanger book={ book } />
+                <ShelfChanger book={ book }
+                  shelfChange={this.state.shelfChange}
+                  notifyShelfChange={() => this.onShelfChange() }
+                />
               </div>
               <div className="book-title">{book.title}</div>
               {book.authors.map((author, index) => (

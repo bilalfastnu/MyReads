@@ -28,7 +28,6 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        
         {this.state.showSearchPage ? (
           <div className="search-books">
             <div className="search-books-bar">
