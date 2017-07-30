@@ -4,7 +4,16 @@ import Book from './Book'
 
 class BookList extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired,
+    shelfChange: PropTypes.bool.isRequired,
+    notifyShelfChange: PropTypes.func.isRequired
+  }
+
+  state = { shelfChange: false }
+
+  onShelfChange() {
+    this.setState({ shelfChange: true })
+    this.props.notifyShelfChange();
   }
 
   render() {
@@ -13,7 +22,12 @@ class BookList extends Component {
     return (
       <ol className="books-grid">
         {books.map((book) => (
-          <Book book={book} key={ book.id } />
+          <Book
+            book={book}
+            key={ book.id }
+            shelfChange={this.state.shelfChange}
+            notifyShelfChange={() => this.onShelfChange() }
+          />
         ))}
       </ol>
     )

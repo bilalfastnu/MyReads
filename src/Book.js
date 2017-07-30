@@ -4,13 +4,17 @@ import ShelfChanger from './ShelfChanger'
 
 class Book extends Component {
   static propTypes = {
-    book: PropTypes.object.isRequired
+    book: PropTypes.object.isRequired,
+    shelfChange: PropTypes.bool.isRequired,
+    notifyShelfChange: PropTypes.func.isRequired
   }
 
   state = { shelfChange: false }
 
   onShelfChange() {
-    this.setState({ selfChange: true })
+    console.log(this.props)
+    this.setState({ shelfChange: true })
+    this.props.notifyShelfChange();
   }
 
   render() {
@@ -19,11 +23,11 @@ class Book extends Component {
     return (
           <li>
             <div className="book">
-              <div>Did you change ? {this.state.selfChange ? book.shelf : 'no'}</div>
               <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
                 }}></div>
-                <ShelfChanger book={ book }
+                <ShelfChanger
+                  book={ book }
                   shelfChange={this.state.shelfChange}
                   notifyShelfChange={() => this.onShelfChange() }
                 />
