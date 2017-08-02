@@ -2,7 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import BookList from './BookList'
+import BookShelf from './BookShelf'
 import { Link } from 'react-router-dom'
 
 
@@ -62,7 +62,7 @@ class BooksApp extends React.Component {
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
-                    <BookList
+                    <BookShelf
                       books={ currentBooks }
                       shelfChange={this.state.shelfChange}
                       notifyShelfChange={() => this.onShelfChange() }
@@ -72,7 +72,7 @@ class BooksApp extends React.Component {
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
-                    <BookList
+                    <BookShelf
                       books={ wantToBooks }
                       shelfChange={this.state.shelfChange}
                       notifyShelfChange={() => this.onShelfChange() }
@@ -82,7 +82,7 @@ class BooksApp extends React.Component {
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
-                    <BookList
+                    <BookShelf
                       books={ readBooks }
                       shelfChange={this.state.shelfChange}
                       notifyShelfChange={() => this.onShelfChange() }
