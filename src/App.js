@@ -8,12 +8,19 @@ import Search from './Search'
 
 class BooksApp extends React.Component {
   state = {
-    books: []
+    books: [],
+    shelfChange: false
   }
+
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({books})
     })
+  }
+
+  onShelfChange() {
+    this.setState({ shelfChange: true })
+    console.log("State change in App.js")
   }
 
   render() {
@@ -22,9 +29,10 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Route path="/search" render={( { history }) => (
-
-          <Search />
-
+          <Search
+            shelfChange={this.state.shelfChange}
+            notifyShelfChange={() => this.onShelfChange() }
+          />
         )} />
         <Route exact  path="/" render={() => (
           <div className="list-books">

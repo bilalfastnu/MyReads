@@ -11,6 +11,7 @@ class BookList extends Component {
 
   onShelfChange() {
     this.setState({ shelfChange: true })
+    console.log("State change in BookList")
   }
 
   render() {
