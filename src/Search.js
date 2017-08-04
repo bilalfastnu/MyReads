@@ -5,11 +5,11 @@ import Book from './Book'
 import * as BooksAPI from './BooksAPI'
 
 class Search extends Component {
+  static propTypes = { changeShelf: PropTypes.func.isRequired }
 
   state = {
     query: '',
-    books: [],
-    shelfChange: false
+    books: []
   }
 
   getBooks = (event) => {
@@ -18,11 +18,6 @@ class Search extends Component {
     BooksAPI.search(query, 10).then((books) => {
       this.setState({books})
     })
-  }
-
-  onShelfChange() {
-    this.setState({ shelfChange: true })
-    this.props.notifyShelfChange()
   }
 
   render() {
@@ -35,18 +30,17 @@ class Search extends Component {
             <div className="search-books-input-wrapper">
               <input type="text"
                 placeholder="Search by title or author"
-                value={query}
-                onChange={ this.getBooks} />
+                value={ query }
+                onChange={ this.getBooks } />
             </div>
           </div>
           <div className="search-books-results">
             <ol className="books-grid">
               {books.map((book) => (
                 <Book
-                  book={book}
+                  book={ book }
                   key={ book.id }
-                  shelfChange={this.state.shelfChange}
-                  notifyShelfChange={() => this.onShelfChange() }
+                  changeShelf={ this.props.changeShelf }
                 />
               ))}
             </ol>

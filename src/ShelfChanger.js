@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import * as BooksAPI from './BooksAPI'
 
 class ShelfChanger extends Component {
   static propTypes = {
     book: PropTypes.object.isRequired,
-    shelfChange: PropTypes.bool.isRequired,
-    notifyShelfChange: PropTypes.func.isRequired
-  }
-
-  state =  { shelfChange: this.props.shelfChange }
-
-  changeShelf = (book, event) => {
-    const newShelf =  event.target.value
-    this.props.book.shelf = newShelf
-    BooksAPI.update(book, newShelf).then(this.props.notifyShelfChange())
+    changeShelf: PropTypes.func.isRequired
   }
 
   render() {
@@ -22,8 +12,8 @@ class ShelfChanger extends Component {
 
     return (
       <div className="book-shelf-changer">
-        <select  onChange={(e) => this.changeShelf(book, e)}
-          value={book.shelf}>
+        <select  onChange={(event) => this.props.changeShelf(book, event.target.value)}
+          defaultValue={ book.shelf }>
           <option value="none" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>

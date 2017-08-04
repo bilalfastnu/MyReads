@@ -5,14 +5,10 @@ import BookShelf from './BookShelf'
 class BookList extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
+    changeShelf: PropTypes.func.isRequired
   }
 
   state = { shelfChange: false }
-
-  onShelfChange() {
-    this.setState({ shelfChange: true })
-    console.log("State change in BookList")
-  }
 
   render() {
     const { books } = this.props
@@ -30,8 +26,7 @@ class BookList extends Component {
               <div className="bookshelf-books">
                 <BookShelf
                   books={ shelfBooks }
-                  shelfChange={this.state.shelfChange}
-                  notifyShelfChange={() => this.onShelfChange() }
+                  changeShelf={ this.props.changeShelf }
                 />
               </div>
             </div> )
