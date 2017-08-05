@@ -5,10 +5,21 @@
 This game was built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
 
 ## How to Load the App
+The project uses Node.js and the Create-React-App starter.  
 
+If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
+
+Once Node is installed, navigate to the directory where you want to store the app
+```cmd 
+git clone https://github.com/sarah-maris/reactnd-project-myreads.git
+npm install
+npm start
+```
 
 ## How to Use the App
-
+* Books are sorted into three categories: Currently Reading, Want to Read and Read
+* To change a book's category or remove a book from the list, click on the green button on  the book cover
+* To add new books, click on the green + button at the bottom of the page
 
 ## Resources:
 * [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
@@ -16,15 +27,9 @@ This game was built for the Udacity React Nanodegree Program. The purpose of the
 * [React Training/React Router](https://reacttraining.com/react-router/web/api/BrowserRouter)
 * [React API](https://facebook.github.io/react/docs/react-api.html)
 
-* [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/#children-to-parent)
-
-
 ### Udacity Resources:
-
 * [Project starter template](https://github.com/udacity/reactnd-project-myreads-starter)
-* [Project Rubric](ttps://review.udacity.com/#!/rubrics/918/view)
-
+* [Project Rubric](https://review.udacity.com/#!/rubrics/918/view)
 * [Udacity CSS Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/css.html)
-* [Udacity Git Style Guide](https://udacity.github.io/git-styleguide/)
 * [Udacity HTML Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/index.html)
 * [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html)
