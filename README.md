@@ -18,17 +18,17 @@ npm start
 
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser
 
-![Load Screen](src/screenshots/load-screen.png "load screen")
+![Load Screen](src/screenshots/load-app.png "load screen")
 
 ## How to Use the App
 * Books are sorted into three categories: Currently Reading, Want to Read and Read
 * To change a book's category or remove a book from the list, click on the green button on  the book cover
-![Change menu](src/screenshots/change.png "change")
+![Change menu](src/screenshots/change-shelf.png "change")
 
 * To add new books, click on the green + button at the bottom of the page.
 Enter an author's name or subject.  Up to 20 items will be returned
 
-![Search Screen](src/screenshots/search.png "search")
+![Search Screen](src/screenshots/search-books.png "search")
 
 ## Resources:
 * [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
