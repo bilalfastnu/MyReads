@@ -9,20 +9,23 @@ class Search extends Component {
 
   state = {
     query: '',
-    books: []
+    books: [],
+    searchErr: false
   }
 
   getBooks = (event) => {
     this.setState({ query: event.target.value })
     let query = event.target.value
-    BooksAPI.search(query, 10).then((books) => {
-      this.setState({books})
-    })
+    if (query) {
+      BooksAPI.search(query, 10).then((books) => {
+        books.length > 0 ?  this.setState({books: books, searchErr: false }) : this.setState({ searchErr: true })
+      })
+    } else this.setState({books: [], searchErr: false })
   }
 
   render() {
-    let books = this.state.books
-    const { query } = this.state
+    
+    const { query, books, searchErr } = this.state
       return (
         <div className="search-books">
           <div className="search-books-bar">
@@ -35,15 +38,29 @@ class Search extends Component {
             </div>
           </div>
           <div className="search-books-results">
-            <ol className="books-grid">
-              {books.map((book) => (
-                <Book
-                  book={ book }
-                  key={ book.id }
-                  changeShelf={ this.props.changeShelf }
-                />
-              ))}
-            </ol>
+            { books.length > 0 && (
+              <div>
+                <div className=''>
+                  <h3>Search returned { books.length} books </h3>
+                </div>
+                <ol className="books-grid">
+                  {books.map((book) => (
+                    <Book
+                      book={ book }
+                      key={ book.id }
+                      changeShelf={ this.props.changeShelf }
+                    />
+                  ))}
+                </ol>
+              </div>
+            )}
+            { searchErr  && (
+              <div>
+                <div className=''>
+                  <h3>Search returned 0 books.  Please try again!</h3>
+                  </div>
+                </div>
+            )}
           </div>
         </div>
       )}
