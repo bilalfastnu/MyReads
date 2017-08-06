@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import ShelfChanger from './ShelfChanger'
 
 class Book extends Component {
+
   static propTypes = {
     book: PropTypes.object.isRequired,
     changeShelf: PropTypes.func.isRequired
   }
 
   render() {
-    const { book } = this.props
+    const { book, changeShelf } = this.props
 
     return (
           <li>
@@ -29,7 +30,7 @@ class Book extends Component {
                 )}
                 <ShelfChanger
                   book={ book }
-                  changeShelf={ this.props.changeShelf }
+                  changeShelf={changeShelf }
                 />
               </div>
               { book.title &&  (

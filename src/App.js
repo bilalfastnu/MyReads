@@ -10,6 +10,8 @@ class BooksApp extends React.Component {
   state = { books: [] }
 
   componentDidMount() {
+
+    // get books on load
     BooksAPI.getAll().then((books) => {
       this.setState({books})
     })
@@ -17,8 +19,14 @@ class BooksApp extends React.Component {
 
   changeShelf = ( newBook, newShelf ) => {
     BooksAPI.update(newBook, newShelf).then(response =>{
+
+      // set shelf for new or updated book
       newBook.shelf = newShelf
+
+      // get list of books without updateed or new book
       var updatedBooks = this.state.books.filter( book => book.id !== newBook.id )
+
+      // add book to array and set new state
       updatedBooks.push(newBook);
       this.setState({ books: updatedBooks })
     })

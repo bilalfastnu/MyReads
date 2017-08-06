@@ -14,18 +14,25 @@ class Search extends Component {
   }
 
   getBooks = (event) => {
-    this.setState({ query: event.target.value })
+
     const query = event.target.value.trim()
+    this.setState({ query: query })
+
+    // if there is user input, run the search
     if (query) {
       BooksAPI.search(query, 10).then((books) => {
         books.length > 0 ?  this.setState({books: books, searchErr: false }) : this.setState({ searchErr: true })
       })
+
+    // if query is empty, reset search params
     } else this.setState({books: [], searchErr: false })
   }
 
   render() {
 
     const { query, books, searchErr } = this.state
+    const { changeShelf } = this.props
+
       return (
         <div className="search-books">
           <div className="search-books-bar">
@@ -48,7 +55,7 @@ class Search extends Component {
                     <Book
                       book={ book }
                       key={ book.id }
-                      changeShelf={ this.props.changeShelf }
+                      changeShelf={ changeShelf }
                     />
                   ))}
                 </ol>

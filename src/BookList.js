@@ -11,7 +11,7 @@ class BookList extends Component {
   state = { shelfChange: false }
 
   render() {
-    const { books } = this.props
+    const { books, changeShelf } = this.props
     const shelfTypes = [{ type: 'currentlyReading', title: 'Currently Reading' },
                         { type: 'wantToRead',  title: 'Want to Read' },
                         { type: 'read', title: 'Read'}]
@@ -26,7 +26,7 @@ class BookList extends Component {
               <div className="bookshelf-books">
                 <BookShelf
                   books={ shelfBooks }
-                  changeShelf={ this.props.changeShelf }
+                  changeShelf={ changeShelf }
                 />
               </div>
             </div> )
