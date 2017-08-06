@@ -10,9 +10,12 @@ The project uses Node.js and the Create-React-App starter.
 If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
 Once Node is installed, navigate to the directory where you want to store the app
-```cmd
+```
 git clone https://github.com/sarah-maris/reactnd-project-myreads.git
 npm install
+```
+Once all of the dependencies have been installed you can launch the app with
+```
 npm start
 ```
 
