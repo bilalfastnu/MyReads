@@ -15,15 +15,27 @@ class Book extends Component {
           <li>
             <div className="book">
               <div className="book-top">
-                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`
-                }}></div>
+                { book.imageLinks && book.imageLinks.thumbnail && (
+                  <div
+                    className="book-cover"
+                    style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`}}>
+                  </div>
+                )}
+                { (!book.imageLinks || !book.imageLinks.thumbnail) && (
+                  <div
+                    className="book-cover"
+                    style={{ width: 128, height: 188 }}>
+                  </div>
+                )}
                 <ShelfChanger
                   book={ book }
                   changeShelf={ this.props.changeShelf }
                 />
               </div>
-              <div className="book-title">{book.title}</div>
-              {book.authors.map((author, index) => (
+              { book.title &&  (
+                <div className="book-title">{book.title}</div>
+              )}
+              { book.authors && book.authors.map((author, index) => (
                 <div className="book-authors" key={index}>{author}</div>
               ))}
             </div>
