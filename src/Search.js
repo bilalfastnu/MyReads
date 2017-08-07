@@ -21,13 +21,13 @@ class Search extends Component {
     const query = event.target.value.trim()
     this.setState({ query: query })
 
-    // if there is user input, run the search
+    // if user input => run the search
     if (query) {
       BooksAPI.search(query, 10).then((books) => {
         books.length > 0 ?  this.setState({newBooks: books, searchErr: false }) : this.setState({ searchErr: true })
       })
 
-    // if query is empty, reset search params
+    // if query is empty => reset state to default
   } else this.setState({newBooks: [], searchErr: false })
   }
 

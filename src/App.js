@@ -23,7 +23,7 @@ class BooksApp extends React.Component {
       // set shelf for new or updated book
       newBook.shelf = newShelf
 
-      // get list of books without updateed or new book
+      // get list of books without updated or new book
       var updatedBooks = this.state.books.filter( book => book.id !== newBook.id )
 
       // add book to array and set new state
