@@ -5,9 +5,9 @@
 This game was built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
 
 ## How to Load the App
-The project uses Node.js and the Create-React-App starter.  
+You can run a hosted version of the app at [http://mountainous-parcel.surge.sh/](http://mountainous-parcel.surge.sh/)
 
-If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
+The project uses Node.js and the Create-React-App starter.  If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
 Once Node is installed, navigate to the directory where you want to store the app
 ```
