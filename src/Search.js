@@ -23,8 +23,8 @@ class Search extends Component {
 
     // if user input => run the search
     if (query) {
-      BooksAPI.search(query, 10).then((books) => {
-        books.length > 0 ?  this.setState({newBooks: books, searchErr: false }) : this.setState({ searchErr: true })
+      BooksAPI.search(query, 20).then((books) => {
+        books.length > 0 ?  this.setState({newBooks: books, searchErr: false }) : this.setState({ newBooks: [], searchErr: true })
       })
 
     // if query is empty => reset state to default
