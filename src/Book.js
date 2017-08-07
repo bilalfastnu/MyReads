@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import ShelfChanger from './ShelfChanger'
+import noCover from './icons/no-cover-image.png'
 
 class Book extends Component {
 
@@ -13,33 +14,28 @@ class Book extends Component {
   render() {
     const { book, books, changeShelf } = this.props
 
+    // add fallbacks for missing cover images and title
+    const coverImg = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : noCover
+    const title = book.title ? book.title : "No title available"
+
     return (
           <li>
             <div className="book">
               <div className="book-top">
-                { book.imageLinks && book.imageLinks.thumbnail && (
-                  <div
-                    className="book-cover"
-                    style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.thumbnail})`}}>
-                  </div>
-                )}
-                { (!book.imageLinks || !book.imageLinks.thumbnail) && (
-                  <div
-                    className="book-cover"
-                    style={{ width: 128, height: 188 }}>
-                  </div>
-                )}
+                <div
+                  className="book-cover"
+                  style={{ width: 128, height: 188, backgroundImage: `url(${coverImg})`}}>
+                </div>
                 <ShelfChanger
                   book={ book }
                   books={ books }
                   changeShelf={changeShelf }
                 />
               </div>
-              { book.title &&  (
-                <div className="book-title">{book.title}</div>
-              )}
-              { book.authors && book.authors.map((author, index) => (
-                <div className="book-authors" key={index}>{author}</div>
+              <div className="book-title">{book.title}</div>
+              { /* Check for authors and render each on separate line if exist*/
+                book.authors && book.authors.map((author, index) => (
+                  <div className="book-authors" key={index}>{author}</div>
               ))}
             </div>
           </li>

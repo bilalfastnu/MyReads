@@ -1,4 +1,5 @@
 # MyReads
+---
 
 ## Project Purpose:
 
@@ -33,7 +34,7 @@ Enter an author's name or subject.  Up to 20 items will be returned
 
 ![Search Screen](src/screenshots/search-books.png "search")
 
-## Resources:
+### Resources and Documentation:
 * [Create-react-app Documentation](https://github.com/facebookincubator/create-react-app)
 * [React Router Documentation](http://knowbody.github.io/react-router-docs/)
 * [React Training/React Router](https://reacttraining.com/react-router/web/api/BrowserRouter)
