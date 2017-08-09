@@ -15,8 +15,11 @@ class ShelfChanger extends Component {
     let currentShelf = 'none'
 
     // if book is in current list, set current shelf to book.shelf
-    if (books.filter( listBook => listBook.id === book.id ).length > 0 ) {
-      currentShelf = book.shelf
+    for (let item of books ) {
+      if (item.id === book.id)  {
+        currentShelf = item.shelf
+        break
+      }
     }
 
     return (

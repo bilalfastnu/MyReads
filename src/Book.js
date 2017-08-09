@@ -32,7 +32,7 @@ class Book extends Component {
                   changeShelf={changeShelf }
                 />
               </div>
-              <div className="book-title">{book.title}</div>
+              <div className="book-title">{ title }</div>
               { /* Check for authors and render each on separate line if exist*/
                 book.authors && book.authors.map((author, index) => (
                   <div className="book-authors" key={index}>{author}</div>
