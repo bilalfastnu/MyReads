@@ -24,7 +24,7 @@ class Book extends Component {
               <div className="book-top">
                 <div
                   className="book-cover"
-                  style={{ width: 128, height: 188, backgroundImage: `url(${coverImg})`}}>
+                  style={{ backgroundImage: `url(${coverImg})`}}>
                 </div>
                 <ShelfChanger
                   book={ book }
