@@ -1,10 +1,11 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import BookList from "./BookList";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import NotFound from "./NotFound";
 
 class BooksApp extends React.Component {
   state = { books: [] };
@@ -34,27 +35,30 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-        <Route
-          path="/search"
-          render={({ history }) => (
-            <Search books={books} changeShelf={this.changeShelf} />
-          )}
-        />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <div className="list-books">
-              <div className="list-books-title">
-                <h1>MyReads</h1>
+        <Switch>
+          <Route
+            path="/search"
+            render={({ history }) => (
+              <Search books={books} changeShelf={this.changeShelf} />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div className="list-books">
+                <div className="list-books-title">
+                  <h1>MyReads</h1>
+                </div>
+                <BookList books={books} changeShelf={this.changeShelf} />
+                <div className="open-search">
+                  <Link to="/search">Search</Link>
+                </div>
               </div>
-              <BookList books={books} changeShelf={this.changeShelf} />
-              <div className="open-search">
-                <Link to="/search">Search</Link>
-              </div>
-            </div>
-          )}
-        />
+            )}
+          />
+          <Route component={NotFound} />
+        </Switch>
       </div>
     );
   }
