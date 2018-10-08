@@ -54,9 +54,7 @@ class Search extends Component {
         <div className="search-books-results">
           {newBooks.length > 0 && (
             <div>
-              <div className="">
-                <h3>Search returned {newBooks.length} books </h3>
-              </div>
+              <h3>Search returned {newBooks.length} books </h3>
               <ol className="books-grid">
                 {newBooks.map(book => (
                   <Book
@@ -70,11 +68,7 @@ class Search extends Component {
             </div>
           )}
           {searchErr && (
-            <div>
-              <div className="">
-                <h3>Search returned 0 books. Please try again!</h3>
-              </div>
-            </div>
+            <h3>Search did not return any books. Please try again!</h3>
           )}
         </div>
       </div>
