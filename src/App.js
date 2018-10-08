@@ -14,19 +14,18 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then(books => this.setState({ books }));
   }
 
-  changeShelf = (newBook, newShelf) => {
-    BooksAPI.update(newBook, newShelf).then(response => {
+  changeShelf = (changedBook, shelf) => {
+    BooksAPI.update(changedBook, shelf).then(response => {
       // set shelf for new or updated book
-      newBook.shelf = newShelf;
-
-      // get list of books without updated or new book
-      var updatedBooks = this.state.books.filter(
-        book => book.id !== newBook.id
-      );
-
-      // add book to array and set new state
-      updatedBooks.push(newBook);
-      this.setState({ books: updatedBooks });
+      changedBook.shelf = shelf;
+      // update state with changed book
+      this.setState(prevState => ({
+        books: prevState.books
+          // remove updated book from array
+          .filter(book => book.id !== changedBook.id)
+          // add updated book to array
+          .concat(changedBook)
+      }));
     });
   };
 
