@@ -11,9 +11,7 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     // get books on load
-    BooksAPI.getAll().then(books => {
-      this.setState({ books });
-    });
+    BooksAPI.getAll().then(books => this.setState({ books }));
   }
 
   changeShelf = (newBook, newShelf) => {
