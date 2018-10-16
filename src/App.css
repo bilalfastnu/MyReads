@@ -3,9 +3,11 @@ body,
 .root {
   height: 100%;
 }
+
 body {
   line-height: 1.5;
 }
+
 body,
 .app {
   background: #e7edef;
@@ -131,13 +133,16 @@ body,
 .book {
   width: 140px;
 }
+
 .book-title,
 .book-authors {
   font-size: 0.8em;
 }
+
 .book-title {
   margin-top: 10px;
 }
+
 .book-authors {
   color: #999;
 }
@@ -218,4 +223,5 @@ body,
   color: #507461;
   font-size: 5em;
 }
+
 /* Colors from https://www.design-seeds.com/in-nature/flora/color-flora-51/ */
