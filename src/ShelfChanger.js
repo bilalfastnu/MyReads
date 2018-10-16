@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ShelfChanger extends Component {
   static propTypes = {
@@ -15,7 +15,7 @@ class ShelfChanger extends Component {
     const { book, books } = this.props;
 
     // set current shelf to none as default
-    let currentShelf = "none";
+    let currentShelf = 'none';
 
     // if book is in current list, set current shelf to book.shelf
     for (let item of books) {

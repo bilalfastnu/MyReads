@@ -21,7 +21,7 @@ body,
 
 .list-books-title h1 {
   color: #e7edef;
-  font: bold 2.5em "Old Standard TT", serif;
+  font: bold 2.5em 'Old Standard TT', serif;
   margin: 0;
 }
 
@@ -42,7 +42,7 @@ body,
 
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
-  font: bold 2.25em "Old Standard TT", serif;
+  font: bold 2.25em 'Old Standard TT', serif;
 }
 
 .bookshelf-books {
@@ -57,7 +57,7 @@ body,
 
 .open-search a {
   background: #507461;
-  background-image: url("./icons/add.svg");
+  background-image: url('./icons/add.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
@@ -96,7 +96,7 @@ body,
 
 .close-search {
   background: #e7edef;
-  background-image: url("./icons/arrow-back.svg");
+  background-image: url('./icons/arrow-back.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
@@ -151,7 +151,7 @@ body,
 
 .book-shelf-changer {
   background: #98cbe1;
-  background-image: url("./icons/arrow-drop-down.svg");
+  background-image: url('./icons/arrow-drop-down.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -189,7 +189,7 @@ body,
 /* not found page */
 .not-found-title {
   color: #507461;
-  font: bold 6em/1 "Old Standard TT", serif;
+  font: bold 6em/1 'Old Standard TT', serif;
   margin: 30px auto;
   width: 50%;
 }
@@ -210,7 +210,7 @@ body,
 
 .home-link a {
   color: #6aaac5;
-  font: bold 4em/1 "Old Standard TT", serif;
+  font: bold 4em/1 'Old Standard TT', serif;
   text-decoration: none;
 }
 

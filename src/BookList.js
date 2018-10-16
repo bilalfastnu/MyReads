@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import BookShelf from "./BookShelf";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import BookShelf from './BookShelf';
 
 class BookList extends Component {
   static propTypes = {
@@ -13,9 +13,9 @@ class BookList extends Component {
   render() {
     const { books, changeShelf } = this.props;
     const shelfTypes = [
-      { type: "currentlyReading", title: "Currently Reading" },
-      { type: "wantToRead", title: "Want to Read" },
-      { type: "read", title: "Read" }
+      { type: 'currentlyReading', title: 'Currently Reading' },
+      { type: 'wantToRead', title: 'Want to Read' },
+      { type: 'read', title: 'Read' }
     ];
 
     return (

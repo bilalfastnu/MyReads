@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import ShelfChanger from "./ShelfChanger";
-import noCover from "./images/no-cover-image.png";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ShelfChanger from './ShelfChanger';
+import noCover from './images/no-cover-image.png';
 
 class Book extends Component {
   static propTypes = {
@@ -18,7 +18,7 @@ class Book extends Component {
       book.imageLinks && book.imageLinks.thumbnail
         ? book.imageLinks.thumbnail
         : noCover;
-    const title = book.title ? book.title : "No title available";
+    const title = book.title ? book.title : 'No title available';
 
     return (
       <li>
