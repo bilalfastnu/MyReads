@@ -8,8 +8,11 @@ class ShelfChanger extends Component {
     changeShelf: PropTypes.func.isRequired
   };
 
+  updateShelf = event =>
+    this.props.changeShelf(this.props.book, event.target.value);
+
   render() {
-    const { book, books, changeShelf } = this.props;
+    const { book, books } = this.props;
 
     // set current shelf to none as default
     let currentShelf = "none";
@@ -24,10 +27,7 @@ class ShelfChanger extends Component {
 
     return (
       <div className="book-shelf-changer">
-        <select
-          onChange={event => changeShelf(book, event.target.value)}
-          defaultValue={currentShelf}
-        >
+        <select onChange={this.updateShelf} defaultValue={currentShelf}>
           <option value="none" disabled>
             Move to...
           </option>
