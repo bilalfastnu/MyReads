@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import * as BooksAPI from './BooksAPI';
+import * as BooksAPI from '../data/BooksAPI';
 import '../css/App.css';
 import BookList from './BookList';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ class BooksApp extends React.Component {
         <Switch>
           <Route
             path="/search"
-            render={({ history }) => (
+            render={() => (
               <Search books={books} changeShelf={this.changeShelf} />
             )}
           />
