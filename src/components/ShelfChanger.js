@@ -6,20 +6,22 @@ const ShelfChanger = props => {
   const updateShelf = event => changeShelf(book, event.target.value);
 
   // set current shelf to none as default
-  let currentShelf = 'none';
+  if (!book.shelf) {
+    book.shelf = 'none';
 
-  // if book is in current list, set current shelf to book.shelf
-  for (let item of books) {
-    if (item.id === book.id) {
-      currentShelf = item.shelf;
-      break;
+    // if book is in current list, set current shelf to book.shelf
+    for (let item of books) {
+      if (item.id === book.id) {
+        book.shelf = item.shelf;
+        break;
+      }
     }
   }
 
   return (
     <div className="book-shelf-changer">
-      <select onChange={updateShelf} defaultValue={currentShelf}>
-        <option value="none" disabled>
+      <select onChange={updateShelf} value={book.shelf}>
+        <option value="moveTo" disabled>
           Move to...
         </option>
         <option value="currentlyReading">Currently Reading</option>
