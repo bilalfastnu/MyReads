@@ -4,11 +4,9 @@
 
 ## Project Purpose:
 
-This game was built for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate understanding of the basic structure and operation of a React-based app.
+MyReads App allows users to search from a catalog of books and save choices to various books shelves. It's built with React & React Router. 
 
 ## How to Load the App
-
-You can run a hosted version of the app at [myreads-sarahmaris.surge.sh/](https://myreads-sarahmaris.surge.sh/)
 
 The project uses Node.js and the Create-React-App starter. If you do not have Node >= 6.x installed, you can download it here: [Node.js](https://nodejs.org/en/)
 
